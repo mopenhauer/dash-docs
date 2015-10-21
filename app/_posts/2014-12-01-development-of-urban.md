@@ -1,0 +1,13 @@
+---
+title: Development of Urban Structure in Ancient Mesopotamia
+permalink: /2014/12/development-urban-structure-ancient-mesopotamia/
+---
+<img src="{{site.baseurl}}/assets/img/Ur%20headshot%20Aug%202013%20Erbil.jpg" alt="Jason Ur" title="Jason Ur" style="vertical-align: top;" class="floatleft" height="161" width="140">
+
+Though Iraq and Syria are frequently in the news today for sectarian strife and internal divisions, in the fourth millennium BCE the region birthed the first urban centers as settlements overcame the social strife that led to fissions and prevented population growth. This dramatic development has led to much scholarly debate and is the subject of Prof. Jason Ur’s paper, “[Households and the Emergence of Cities in Ancient Mesopotamia](http://dash.harvard.edu/handle/1/12490321).”
+
+Ur challenges the model of urbanism arising from the development of bureaucratic structures such as the temple and the state, representing the elite or society as a whole. As cities were still understood in the pre-urban terms of kinship in texts from centuries later, Ur finds such a revolutionary change in social development to be implausible. He presents an alternative model of urban development that maintains the place of the household as the center of society, even as settlements grew into cities. By expanding their concept of the household beyond the domestic residence, early urbanites were able to create a “dynamic network of nested households” that included the temples, royal households, and the city itself. Ur argues that this household model of the city made all members of the community actors in the development of the urban structure, not passive subjects of an independent elite. With a kinship understanding of society, the growing inequality would not be structured along class divisions, which would tend to lead to conflict and fission, but within patrimonial relationships. Consequently, the household model elucidates the rational interest of all levels of society to participate in the urban system.
+
+Jason Ur, a Professor of Anthropology at Harvard, has directed archaeological projects in Iraq and Syria. He has also made extensive use of declassified photographs from American spy satellites to locate the settlements, irrigation systems, and pastoral landscapes of ancient Mesopotamia. You can find “[Households and the Emergence of Cities in Ancient Mesopotamia” and 17 additional works](http://dash.harvard.edu/browse?type=harvardAuthor&authority=e3a23c5a43c61546295826431d46ce72) authored by Professor Ur in DASH. 
+
+_Feature by Mitu Choksi, OSC Open Access Fellow and graduate student at the Harvard Divinity School_. 

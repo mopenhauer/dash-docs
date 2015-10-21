@@ -1,0 +1,44 @@
+---
+layout: front
+---
+<h1 class="sr-only" id="top" tabindex="-1">DASH: Digital Access to Scholarship at Harvard</h1>
+
+<h2 class="sr-only">Stories from DASH Readers</h2>
+<div class="osc-carousel">
+  <button class="stop-button btn-link" type="button">stop slideshow</button>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#panel-journalist" aria-controls="panel-journalist" role="tab" data-toggle="tab"><span class="sr-only">A Journalist's Story</span><span aria-hidden="true">+</span></a></li>
+    <li role="presentation"><a href="#panel-instructor" aria-controls="panel-instructor" role="tab" data-toggle="tab"><span class="sr-only">A Community College Instructor's Story</span><span aria-hidden="true">+</span></a></li>
+    <li role="presentation"><a href="#panel-student" aria-controls="panel-student" role="tab" data-toggle="tab"><span class="sr-only">A Doctoral Student's Story</span><span aria-hidden="true">+</span></a></li>
+    <li role="presentation"><a href="#panel-research" aria-controls="panel-research" role="tab" data-toggle="tab"><span class="sr-only">A Research Manager's Story</span><span aria-hidden="true">+</span></a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="panel-journalist">
+      <div><a href="http://dash.harvard.edu/stories"><img src="{{site.baseurl}}/assets/img/banner2.png" alt="Read DASH User Stories" title="Read DASH User Stories" width="723" style="margin-bottom: 10px;"></a></div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="panel-instructor">
+        <div><a href="http://dash.harvard.edu/stories"><img src="{{site.baseurl}}/assets/img/banner1.png" alt="Read DASH User Stories" title="Read DASH User Stories" width="723" style="margin-bottom: 10px;"></a></div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="panel-student">
+      <div><a href="http://dash.harvard.edu/stories"><img src="{{site.baseurl}}/assets/img/banner3.png" alt="Read DASH User Stories" title="Read DASH User Stories" width="723" style="margin-bottom: 10px;"></a></div>
+      </div>
+    <div role="tabpanel" class="tab-pane" id="panel-research">
+      <div><a href="http://dash.harvard.edu/stories"><img src="{{site.baseurl}}/assets/img/banner4.png" alt="Read DASH User Stories" title="Read DASH User Stories" width="723" style="margin-bottom: 10px;"></a></div>
+      </div>
+  </div>
+</div>
+
+<h2 class="h1">What is DASH?</h2>
+<p>A central, open-access repository of research by members of the Harvard community.</p>
+<p><a href="{{site.baseurl}}/deposit/"><img src="{{site.baseurl}}/assets/img/ButtonDeposit.png" alt="Deposit Your Work" title="Deposit Your Work" height="53" width="205"></a></p>
+
+<h2 class="h1">Featured Works</h2>
+{% for post in site.posts limit:5 %}
+<article class="first-post">
+    <h3 class="h2">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h3>
+    {{post.content}}
+</article>
+{% endfor %}

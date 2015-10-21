@@ -1,0 +1,31 @@
+# Build settings
+destination: ../builds/dev
+exclude: ['css', '_scss', '_sass', 'assets/js/header.js','assets/js/slide.js', '.htaccess~']
+permalink: pretty
+markdown: kramdown
+
+gems:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Site settings
+title: Digital Access to Scholarship at Harvard
+email: osc@harvard.edu
+phone: +1 (617) 495 4089
+fax: +1 (617) 495 0370
+description: > # this means to ignore newlines until "baseurl colon"
+  PLACEHOLDER TEXT
+
+baseurl: "/static/dash-jekyll" # the subpath of your site, e.g. /blog
+url: "https://dash.harvard.edu" # the base hostname & protocol for your site
+twitter_url: https://twitter.com/oscharvard
+facebook_url: https://www.facebook.com/pages/Harvard-Library-Office-for-Scholarly-Communication/109048279146780
+google_url: https://plus.google.com/111058536544461893402
+
+# Content Handling
+defaults:
+ -
+    scope:
+       path: ""
+    values:
+        layout: "default"

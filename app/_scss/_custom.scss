@@ -1,0 +1,289 @@
+// Bootstrap: Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+//Bootstrap: Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+// Imitate the DASH theme
+
+div.container {
+  font-family: Verdana,"Trebuchet MS",Arial,Helvetica,sans-serif;
+  margin-top: 0px;
+  width: 960px;
+  max-width: 1280px;
+  overflow: hidden;
+  margin: auto;
+  line-height: 1.18em;
+}
+
+a {
+  color: #417577;
+  text-decoration: none;
+
+  &:hover, &:focus{
+    text-decoration: underline;
+  }
+}
+
+h1, .h1 {
+  font-size: 1.8em;
+  color: #982521;
+  font-weight: 400;
+  line-height: 1.3em;
+  margin: 0;
+}
+
+h2, .h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #982521;
+    line-height: 1.3em;
+    margin-top: 0.769em;
+    margin-bottom: 0.769em;
+}
+
+h3, .h3, h3 a {
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: #982521;
+  margin-top: 0.909em;
+  margin-bottom: 0.909em;
+}
+
+h4 {
+  font-size: .9em;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: #982521;
+  margin-top: 0.909em;
+  margin-bottom: 0.909em;
+}
+
+header {
+  img {
+    display: block;
+    border-bottom: 1px solid #982521;
+  }
+}
+
+nav {
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  font-weight: 600;
+
+  ul {
+    margin-top: 0px;
+  }
+
+  a {
+    color: #669B9D;
+  }
+
+}
+
+ul.nav-pills li {
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+li.dropdown li {
+  border: none;
+}
+
+.nav-pills > li + li {
+    margin-left: 0px;
+}
+
+main {
+  width: 724px;
+  clear: both;
+  margin-right: -745px;
+  float: left;
+  padding: 10px 10px 0px;
+  border: 1px solid #ccc;
+
+  font-size: .85em;
+
+}
+
+aside {
+  float: left;
+  width: 200px;
+  margin-left: 755px;
+  padding: 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 0px 10px;
+
+  li {
+    list-style-type: none;
+    margin-left: -30px;
+    font-size: .69em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+  
+}
+
+footer {
+  clear: both;
+  font-size: 0.8em;
+  padding: 10px 0 0 10px;
+}
+
+// Tweaks
+
+.terms em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.indented {
+  padding-left: 30px;
+}
+
+.faq h2 {
+  @extend .h3;
+}
+
+img.floatleft {
+    float: left;
+    margin: 0px 13px 1px 0px;
+}
+
+img.floatright {
+    float: right;
+    margin: 0px 0px 1px 10px;
+}
+
+article {
+  clear: both;
+
+  img {
+    margin-bottom: 10px !important;
+  }
+}
+
+//  Sidebar tabs
+aside {
+  h2.stats {
+    margin-bottom: 5px;
+  }
+  .osc-carousel {
+      position: relative;
+      height: 152px;
+      margin-bottom: 15px;
+  }
+
+  .nav-tabs {
+    margin-top: 9px;
+    border-bottom: none;
+    position: absolute;
+    bottom: 0px;
+    padding-left: 35px;
+  }
+
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-bottom-color: #ddd; 
+  }
+
+  .nav > li {
+     margin-left: 0px;
+  }
+
+  .nav > li > a {
+      padding: 2px 7px;
+      border-radius: 10px;
+  }
+
+  .tab-pane span {
+      display: block;
+      padding-top: 5px;
+      font-size: .8em;
+  }
+
+  .tab-pane {
+      padding-top: 10px;
+       text-align: center;
+      /*padding-bottom: 25px;*/
+  }
+
+  .osc-carousel button {
+      position: absolute;
+      bottom: 0px;
+      margin-left: 20px; 
+  }
+}
+
+// Story
+main { 
+  .osc-carousel {
+      position: relative;
+      height: 174px;
+      margin-bottom: -14px;
+  }
+
+  .nav-tabs {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-bottom: none;
+    li a {
+      background-color: #B14836;
+      color: white;
+      border-bottom-color: #ddd;
+    }
+  }
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-bottom-color: #ddd; 
+  }
+  .nav-tabs > li > a {
+    border-radius: 10px;
+  }
+  .nav-tabs > li > a:hover, .nav > li > a:focus {
+    color: black;
+  }
+  .nav-tabs a.pause {
+    margin-right: 20px;
+  }
+
+  .stop-button {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    color: whitesmoke;
+
+    &:focus, &:hover {
+      background-color: inherit;
+      color: whitesmoke;
+    }
+  }
+
+}
