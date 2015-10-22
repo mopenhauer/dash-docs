@@ -2,7 +2,7 @@
 title: Privacy Policy for DASH Repository
 ---
 
-This Privacy Policy discloses the information gathering and dissemination practices for the DASH (Digital Access to Scholarship at Harvard) web site [(http://dash.harvard.edu)](http://dash.harvard.edu/) (the "Site").
+This Privacy Policy discloses the information gathering and dissemination practices for the DASH (Digital Access to Scholarship at Harvard) web site [(https://dash.harvard.edu)](https://dash.harvard.edu/) (the "Site").
 
 The Site is maintained by the Harvard Office for Scholarly Communication (the "OSC"), a part of the President and Fellows of Harvard College ("Harvard"), in support of its mission to disseminate information and research to scholars, educators and the public. As used in this Privacy Policy, the terms "we," "us" and "our" refer to the OSC as a part of Harvard.
 
@@ -44,7 +44,7 @@ This Site may contain links to other web sites. We are not responsible for the p
 
 ## Contacting Us
 
-If you have any questions about this privacy statement, the practices of this Site, or your dealings with this Site, please contact the [Office for Scholarly Communication](http://osc.hul.harvard.edu/).
+If you have any questions about this privacy statement, the practices of this Site, or your dealings with this Site, please contact the [Office for Scholarly Communication](https://osc.hul.harvard.edu/).
 
 ## Changes to This Policy
 
