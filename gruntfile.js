@@ -1,8 +1,17 @@
 'use strict';
 
 module.exports = function (grunt) {
+  
+  // CONFIGURATION
+  var globalConfig = {
+    devBuild: "builds/dev/docs",
+    prodBuild: "builds/prod/docs",
+    linkCheckerURL: "dash-local.harvard.edu"
+  };
 
   grunt.initConfig({
+    // load global config
+    globalConfig: globalConfig,
 
     //////////
     // BASH
@@ -22,16 +31,8 @@ module.exports = function (grunt) {
       jekyllClear: {
         command: 'cd app; rm .jekyll-metadata; cd ../'
       },
-      rewriteRules: {
-        command: 'cd utilities; bash rewrites.sh; cd ../',
-          stderr: false,
-          callback: function (error, stdout, stderr) {
-              if (stderr) {
-                  grunt.warn("There was an error building the rewrite rules file:)\n\n" + stderr)
-            }
-          }
-      },
-      // Tests
+
+      // custom tests
       findRelics: {
         command: 'cd tests/find_relics; bash find_relics.sh; cd ../../',
           stderr: false,
@@ -70,9 +71,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'builds/dev/docs',
+          cwd: '<%= globalConfig.devBuild %>',
           src: '**/*.html',
-          dest: 'builds/prod/docs/'
+          dest: '<%= globalConfig.prodBuild %>/'
         }]
       }
     },
@@ -82,40 +83,30 @@ module.exports = function (grunt) {
     //////////
     copy: {
       bootstrapCustom: {
-        files: [{
-          src: 'app/_scss/_bootstrap-custom.scss',
-          dest: 'vendor/bootstrap-sass/assets/stylesheets/_bootstrap-custom.scss'
-        }]
+        src: 'app/_scss/_bootstrap-custom.scss',
+        dest: 'vendor/bootstrap-sass/assets/stylesheets/_bootstrap-custom.scss'
       },
       fonts: {
-        files: [{
-          expand: true,
-          cwd: 'builds/dev/docs/assets/fonts',
-          src: '**',
-          dest: 'builds/prod/docs/assets/fonts/'
-        }]
+        expand: true,
+        cwd: '<%= globalConfig.devBuild %>/assets/fonts',
+        src: '**',
+        dest: '<%= globalConfig.prodBuild %>/assets/fonts/'
       },
       files: {
-        files: [{
-          expand: true,
-          cwd: 'builds/dev/docs/assets/files',
-          src: '**',
-          dest: 'builds/prod/docs/assets/files/'
-        }]
+        expand: true,
+        cwd: '<%= globalConfig.devBuild %>/assets/files',
+        src: '**',
+        dest: '<%= globalConfig.prodBuild %>/assets/files/'
       },
       serverconfig: {
-        files: [{
-          expand: true,
-          cwd: 'builds/dev/docs',
-          src: ['.htaccess', 'robots.txt'],
-          dest: 'builds/prod/docs/'
-        }]
+        expand: true,
+        cwd: '<%= globalConfig.devBuild %>',
+        src: ['.htaccess', 'robots.txt'],
+        dest: '<%= globalConfig.prodBuild %>/'
       },
       sitemap:{
-        files: [{
-            src: 'builds/dev/docs/sitemap.xml', 
-            dest: 'builds/prod/docs/sitemap.xml'
-        }]
+        src: '<%= globalConfig.devBuild %>/sitemap.xml', 
+        dest: '<%= globalConfig.prodBuild %>/sitemap.xml'
       }
     },
 
@@ -123,9 +114,9 @@ module.exports = function (grunt) {
       dynamic: {                      
         files: [{
         expand: true,                  
-        cwd: 'builds/dev/docs/assets/img',                   
+        cwd: '<%= globalConfig.devBuild %>/assets/img',                   
         src: ['**/*'],   
-        dest: 'builds/prod/docs/assets/img/',
+        dest: '<%= globalConfig.prodBuild %>/assets/img/',
         }]
       }
     },
@@ -141,7 +132,7 @@ module.exports = function (grunt) {
       },
       dev: {
         src: ['vendor/jquery/dist/jquery.js','vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js', 'vendor/bootstrap-sass/assets/javascripts/bootstrap/tab.js', 'app/assets/js/slide.js'],
-        dest: 'builds/dev/docs/assets/js/main.js'
+        dest: '<%= globalConfig.devBuild %>/assets/js/main.js'
       }
     },
 
@@ -149,7 +140,7 @@ module.exports = function (grunt) {
     uglify: {
       prod: {
         files: {
-        'builds/prod/docs/assets/js/main.js': ['builds/dev/docs/assets/js/main.js']
+        '<%= globalConfig.prodBuild %>/assets/js/main.js': ['<%= globalConfig.devBuild %>/assets/js/main.js']
         }
       }
     },
@@ -166,7 +157,7 @@ module.exports = function (grunt) {
         },
         files: [{
           src: 'app/_scss/main.scss',
-          dest: 'builds/dev/docs/assets/css/main.css'
+          dest: '<%= globalConfig.devBuild %>/assets/css/main.css'
         }]
       }
     },
@@ -175,9 +166,9 @@ module.exports = function (grunt) {
     purifycss: {
       options: {},
       target: {
-        src: ['builds/dev/docs/**/*.html', 'builds/dev/docs/assets/*.js'],
-        css: ['builds/dev/docs/assets/css/main.css'],
-        dest: 'builds/prod/docs/assets/css/main.css'
+        src: ['<%= globalConfig.devBuild %>/**/*.html', '<%= globalConfig.devBuild %>/assets/*.js'],
+        css: ['<%= globalConfig.devBuild %>/assets/css/main.css'],
+        dest: '<%= globalConfig.prodBuild %>/assets/css/main.css'
       }
     },
 
@@ -185,8 +176,8 @@ module.exports = function (grunt) {
     cssmin: {
       target: {
       files: [{
-        src: 'builds/prod/docs/assets/css/main.css',
-        dest: 'builds/prod/docs/assets/css/main.css',
+        src: '<%= globalConfig.prodBuild %>/assets/css/main.css',
+        dest: '<%= globalConfig.prodBuild %>/assets/css/main.css',
       }]
       }
     },
@@ -201,7 +192,7 @@ module.exports = function (grunt) {
         stoponerror: false,
         relaxerror: ['W005', 'W001', 'W002', 'W003']
       },
-      files: ['builds/dev/docs/**/*.html']
+      files: ['<%= globalConfig.devBuild %>/**/*.html']
     },
 
     // broken links
@@ -220,7 +211,7 @@ module.exports = function (grunt) {
         }
       },
       dev: {
-        site: 'dash-local.harvard.edu',
+        site: '<%= globalConfig.linkCheckerURL %>',
       }
     }
     // ,
@@ -230,28 +221,36 @@ module.exports = function (grunt) {
     // Deploying
     //////////
 
-    // rsync
     // rsync: {
     //   options: {
-    //     args: ['-avz'],
+    //     args: ['-cavz'],
     //     exclude: ['.DS_Store']
     //   },
-    //   stage: {
+    //   eaton: {
     //     options: {
-    //       src: './builds/prod/docs/',
-    //       dest: '/home/osc/copyright/htdocs',
+    //       src: './<%= globalConfig.prodBuild %>/',
+    //       dest: '',
     //       host: 'oscusr@eaton.hul.harvard.edu',
     //       delete: true
     //     }
     //   },
-    //   prod: {
+    //   byron: {
     //     options: {
-    //       src: './builds/prod/docs/',
-    //       dest: '/home/osc/copyright/htdocs',
+    //       src: './<%= globalConfig.prodBuild %>/',
+    //       dest: '',
     //       host: 'oscusr@byron.hul.harvard.edu',
     //       delete: true
     //     }
-    //   }
+    //   },
+    //   turner: {
+    //     options: {
+    //       src: './<%= globalConfig.prodBuild %>/',
+    //       dest: '',
+    //       host: 'dspace@turner.lib.harvard.edu',
+    //       delete: false
+    //     }
+    //   },
+
     // }
 
 
@@ -281,10 +280,9 @@ module.exports = function (grunt) {
   grunt.registerTask('polish', ['exec:findNotes']);
 
   grunt.registerTask('stage', ['newer:htmlmin','newer:copy:fonts','newer:copy:files','newer:copy:serverconfig','newer:copy:sitemap','newer:imagemin',
-             'purifycss','cssmin','newer:uglify' 
-  ]);
+             'purifycss','cssmin','newer:uglify']);
 
-  // Register build as the default task fallback
-  grunt.registerTask('default', 'build');
+  // Register rebuild as the default task fallback
+  grunt.registerTask('default', 'rebuild');
 
 };
