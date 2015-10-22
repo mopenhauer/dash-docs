@@ -70,9 +70,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'builds/dev',
+          cwd: 'builds/dev/docs',
           src: '**/*.html',
-          dest: 'builds/prod/'
+          dest: 'builds/prod/docs/'
         }]
       }
     },
@@ -90,31 +90,31 @@ module.exports = function (grunt) {
       fonts: {
         files: [{
           expand: true,
-          cwd: 'builds/dev/assets/fonts',
+          cwd: 'builds/dev/docs/assets/fonts',
           src: '**',
-          dest: 'builds/prod/assets/fonts/'
+          dest: 'builds/prod/docs/assets/fonts/'
         }]
       },
       files: {
         files: [{
           expand: true,
-          cwd: 'builds/dev/assets/files',
+          cwd: 'builds/dev/docs/assets/files',
           src: '**',
-          dest: 'builds/prod/assets/files/'
+          dest: 'builds/prod/docs/assets/files/'
         }]
       },
       serverconfig: {
         files: [{
           expand: true,
-          cwd: 'builds/dev',
+          cwd: 'builds/dev/docs',
           src: ['.htaccess', 'robots.txt'],
-          dest: 'builds/prod/'
+          dest: 'builds/prod/docs/'
         }]
       },
       sitemap:{
         files: [{
-            src: 'builds/dev/sitemap.xml', 
-            dest: 'builds/prod/sitemap.xml'
+            src: 'builds/dev/docs/sitemap.xml', 
+            dest: 'builds/prod/docs/sitemap.xml'
         }]
       }
     },
@@ -123,9 +123,9 @@ module.exports = function (grunt) {
       dynamic: {                      
         files: [{
         expand: true,                  
-        cwd: 'builds/dev/assets/img',                   
-        src: ['**/*.{png,jpg,gif}'],   
-        dest: 'builds/prod/assets/img/',
+        cwd: 'builds/dev/docs/assets/img',                   
+        src: ['**/*'],   
+        dest: 'builds/prod/docs/assets/img/',
         }]
       }
     },
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
       },
       dev: {
         src: ['vendor/jquery/dist/jquery.js','vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js', 'vendor/bootstrap-sass/assets/javascripts/bootstrap/tab.js', 'app/assets/js/slide.js'],
-        dest: 'builds/dev/assets/js/main.js'
+        dest: 'builds/dev/docs/assets/js/main.js'
       }
     },
 
@@ -149,7 +149,7 @@ module.exports = function (grunt) {
     uglify: {
       prod: {
         files: {
-        'builds/prod/assets/js/main.js': ['builds/dev/assets/js/main.js']
+        'builds/prod/docs/assets/js/main.js': ['builds/dev/docs/assets/js/main.js']
         }
       }
     },
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
         },
         files: [{
           src: 'app/_scss/main.scss',
-          dest: 'builds/dev/assets/css/main.css'
+          dest: 'builds/dev/docs/assets/css/main.css'
         }]
       }
     },
@@ -175,9 +175,9 @@ module.exports = function (grunt) {
     purifycss: {
       options: {},
       target: {
-        src: ['builds/dev/**/*.html', 'builds/dev/assets/*.js'],
-        css: ['builds/dev/assets/css/main.css'],
-        dest: 'builds/prod/assets/css/main.css'
+        src: ['builds/dev/docs/**/*.html', 'builds/dev/docs/assets/*.js'],
+        css: ['builds/dev/docs/assets/css/main.css'],
+        dest: 'builds/prod/docs/assets/css/main.css'
       }
     },
 
@@ -185,8 +185,8 @@ module.exports = function (grunt) {
     cssmin: {
       target: {
       files: [{
-        src: 'builds/prod/assets/css/main.css',
-        dest: 'builds/prod/assets/css/main.css',
+        src: 'builds/prod/docs/assets/css/main.css',
+        dest: 'builds/prod/docs/assets/css/main.css',
       }]
       }
     },
@@ -201,7 +201,7 @@ module.exports = function (grunt) {
         stoponerror: false,
         relaxerror: ['W005', 'W001', 'W002', 'W003']
       },
-      files: ['builds/dev/**/*.html']
+      files: ['builds/dev/docs/**/*.html']
     },
 
     // broken links
@@ -238,7 +238,7 @@ module.exports = function (grunt) {
     //   },
     //   stage: {
     //     options: {
-    //       src: './builds/prod/',
+    //       src: './builds/prod/docs/',
     //       dest: '/home/osc/copyright/htdocs',
     //       host: 'oscusr@eaton.hul.harvard.edu',
     //       delete: true
@@ -246,7 +246,7 @@ module.exports = function (grunt) {
     //   },
     //   prod: {
     //     options: {
-    //       src: './builds/prod/',
+    //       src: './builds/prod/docs/',
     //       dest: '/home/osc/copyright/htdocs',
     //       host: 'oscusr@byron.hul.harvard.edu',
     //       delete: true
@@ -274,7 +274,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-rsync")
 
   // Register the grunt tasks
-  grunt.registerTask('build', ['copy:bootstrapCustom','exec:jekyllBuild','concat','sass', 'exec:rewriteRules']);
+  grunt.registerTask('build', ['copy:bootstrapCustom','exec:jekyllBuild','concat','sass']);
   grunt.registerTask('rebuild', ['exec:jekyllClear','build']);
 
   grunt.registerTask('test', ['exec:findRelics', 'exec:checkBaseurl', 'bootlint', 'linkChecker:dev']);
