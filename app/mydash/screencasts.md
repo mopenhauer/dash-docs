@@ -6,4 +6,4 @@ redirect_from:
 
 We regret that MyDASH Screencasts are temporarily unavailable.
 
-Please enjoy our [user stories]({{site.baseurl}}/stories) in the meantime!
+Please enjoy our [user stories](https://dash.harvard.edu/stories) in the meantime!
