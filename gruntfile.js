@@ -6,7 +6,12 @@ module.exports = function (grunt) {
   var globalConfig = {
     devBuild: "builds/dev/docs",
     prodBuild: "builds/prod/docs",
-    linkCheckerURL: "dash-local.harvard.edu"
+    // BRS
+    // linkCheckerURL: "",
+    // RLC
+    linkCheckerURL: "dash-local.harvard.edu",
+    localSync: false,
+    localSyncTo: ""
   };
 
   grunt.initConfig({
@@ -24,43 +29,46 @@ module.exports = function (grunt) {
         stderr: false,
         callback: function (error, stdout, stderr) {
           if (stderr) {
-              grunt.warn(stderr)
+            grunt.warn(stderr)
           }
         }
       },
       jekyllClear: {
         command: 'cd app; rm .jekyll-metadata; cd ../'
       },
-
       // custom tests
       findRelics: {
         command: 'cd tests/find_relics; bash find_relics.sh; cd ../../',
-          stderr: false,
-          callback: function (error, stdout, stderr) {
-              if (stderr) {
-                  grunt.warn("Relics found. (If intentional, add regex to tests/find_relics/exclude_TYPE.txt)\n\n" + stderr)
-            }
+        stderr: false,
+        callback: function (error, stdout, stderr) {
+          if (stderr) {
+            grunt.warn("Relics found. (If intentional, add regex to tests/find_relics/exclude_TYPE.txt)\n\n" + stderr)
           }
+        }
       },
       findNotes: {
         command: 'cd tests/find_notes; bash find_notes.sh; cd ../../',
-          stderr: false,
-          callback: function (error, stdout, stderr) {
-              if (stderr) {
-                  grunt.warn("Notes found. (If intentional, add regex to tests/find_notes/exclude_TYPE.txt)\n\n" + stderr)
-            }
+        stderr: false,
+        callback: function (error, stdout, stderr) {
+          if (stderr) {
+            grunt.warn("Notes found. (If intentional, add regex to tests/find_notes/exclude_TYPE.txt)\n\n" + stderr)
           }
+        }
       },
       checkBaseurl: {
         command: 'cd tests/check_baseurl; bash check_baseurl.sh; cd ../../',
-          stderr: false,
-          callback: function (error, stdout, stderr) {
-              if (stderr) {
-                  grunt.warn("Found relative links without {{site.baseurl}}. (If intentional, add lines to tests/check_baseurl/exclude_lines.txt)\n\n" + stderr)
-            }
+        stderr: false,
+        callback: function (error, stdout, stderr) {
+          if (stderr) {
+            grunt.warn("Found relative links without {{site.baseurl}}. (If intentional, add lines to tests/check_baseurl/exclude_lines.txt)\n\n" + stderr)
           }
+        }
       }
     },
+    
+    //////////
+    // HTML
+    /////////
 
     htmlmin: {
       prod: {
@@ -79,11 +87,11 @@ module.exports = function (grunt) {
     },
 
     //////////
-    // Static Assets
+    // Other Files to Move Around
     //////////
     copy: {
       bootstrapCustom: {
-        src: 'app/_scss/_bootstrap-custom.scss',
+        src: 'app/_scss/_bootstrap-custom.scss', 
         dest: 'vendor/bootstrap-sass/assets/stylesheets/_bootstrap-custom.scss'
       },
       fonts: {
@@ -101,23 +109,17 @@ module.exports = function (grunt) {
       serverconfig: {
         expand: true,
         cwd: '<%= globalConfig.devBuild %>',
-        src: ['.htaccess', 'robots.txt'],
+        src: ['.htaccess', 'robots.txt', 'sitemap.xml'],
         dest: '<%= globalConfig.prodBuild %>/'
-      },
-      sitemap:{
-        src: '<%= globalConfig.devBuild %>/sitemap.xml', 
-        dest: '<%= globalConfig.prodBuild %>/sitemap.xml'
       }
     },
 
     imagemin: {
       dynamic: {                      
-        files: [{
         expand: true,                  
         cwd: '<%= globalConfig.devBuild %>/assets/img',                   
         src: ['**/*'],   
         dest: '<%= globalConfig.prodBuild %>/assets/img/',
-        }]
       }
     },
 
@@ -131,7 +133,12 @@ module.exports = function (grunt) {
         separator: ';',
       },
       dev: {
-        src: ['vendor/jquery/dist/jquery.js','vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js', 'vendor/bootstrap-sass/assets/javascripts/bootstrap/tab.js', 'app/assets/js/slide.js'],
+        src: [
+          'vendor/jquery/dist/jquery.js',
+          'vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+          'vendor/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+          'app/assets/js/slide.js'
+        ],
         dest: '<%= globalConfig.devBuild %>/assets/js/main.js'
       }
     },
@@ -140,7 +147,7 @@ module.exports = function (grunt) {
     uglify: {
       prod: {
         files: {
-        '<%= globalConfig.prodBuild %>/assets/js/main.js': ['<%= globalConfig.devBuild %>/assets/js/main.js']
+          '<%= globalConfig.prodBuild %>/assets/js/main.js': ['<%= globalConfig.devBuild %>/assets/js/main.js']
         }
       }
     },
@@ -175,10 +182,10 @@ module.exports = function (grunt) {
     // minify css
     cssmin: {
       target: {
-      files: [{
-        src: '<%= globalConfig.prodBuild %>/assets/css/main.css',
-        dest: '<%= globalConfig.prodBuild %>/assets/css/main.css',
-      }]
+        files: [{
+          src: '<%= globalConfig.prodBuild %>/assets/css/main.css',
+          dest: '<%= globalConfig.prodBuild %>/assets/css/main.css',
+        }]
       }
     },
 
@@ -187,7 +194,7 @@ module.exports = function (grunt) {
     //////////
 
     // html validation
-   htmllint: {
+    htmllint: {
       all: ["<%= globalConfig.devBuild %>/**/*.html"]
     },
 
@@ -203,60 +210,75 @@ module.exports = function (grunt) {
     // broken links
     linkChecker: {
       options: {
-      maxConcurrency: 20,
-      callback: function (crawler) {
-        crawler.addFetchCondition(function(parsedURL) {
-          // mailto links are obfuscated and confuse the crawler, exclude them
-          return !parsedURL.path.match(/&$/i);
-        });
-        crawler.addFetchCondition(function(parsedURL) {
-          // don't check the assets folder, causes error and doesn't make sense
-          return !parsedURL.path.match(/assets/i);
-        });
+        maxConcurrency: 20,
+        callback: function (crawler) {
+          crawler.addFetchCondition(function(parsedURL) {
+            // mailto links are obfuscated and confuse the crawler, exclude them
+            return !parsedURL.path.match(/&$/i);
+          });
+          crawler.addFetchCondition(function(parsedURL) {
+            // don't check the assets folder, causes error and doesn't make sense
+            return !parsedURL.path.match(/assets/i);
+          });
         }
       },
       dev: {
         site: '<%= globalConfig.linkCheckerURL %>',
       }
-    }
-    // ,
+    },
 
 
     //////////
     // Deploying
     //////////
 
-    // rsync: {
-    //   options: {
-    //     args: ['-cavz'],
-    //     exclude: ['.DS_Store']
-    //   },
-    //   eaton: {
-    //     options: {
-    //       src: './<%= globalConfig.prodBuild %>/',
-    //       dest: '',
-    //       host: 'oscusr@eaton.hul.harvard.edu',
-    //       delete: true
-    //     }
-    //   },
-    //   byron: {
-    //     options: {
-    //       src: './<%= globalConfig.prodBuild %>/',
-    //       dest: '',
-    //       host: 'oscusr@byron.hul.harvard.edu',
-    //       delete: true
-    //     }
-    //   },
-    //   turner: {
-    //     options: {
-    //       src: './<%= globalConfig.prodBuild %>/',
-    //       dest: '',
-    //       host: 'dspace@turner.lib.harvard.edu',
-    //       delete: false
-    //     }
-    //   },
+    // rsync
+    rsync: {
+      options: {
+        args: ['-ncavz'],
+        exclude: ['.DS_Store']
+      },
+      local: {
+        options: {
+          src: '<%= globalConfig.devBuild %>/',
+          dest: '<%= globalConfig.localSyncTo %>',
+          delete: false
+        }
+      },
+      eaton: {
+        options: {
+          src: '<%= globalConfig.prodBuild %>/',
+          dest: '',
+          host: 'oscusr@eaton.hul.harvard.edu',
+          delete: false
+        }
+      },
+      byron: {
+        options: {
+          src: '<%= globalConfig.prodBuild %>/',
+          dest: '',
+          host: 'oscusr@byron.hul.harvard.edu',
+          delete: false
+        }
+      },
+      turner: {
+        options: {
+          src: '<%= globalConfig.prodBuild %>/',
+          dest: '',
+          host: 'dspace@turner.lib.harvard.edu',
+          delete: false
+        }
+      }
+    },
 
-    // }
+    if: {
+      syncOnBuild: {
+        options: {
+          config: 'globalConfig.localSync'
+        },
+        ifTrue: [ 'rsync:local' ],
+      }
+    }
 
 
   });
@@ -276,17 +298,45 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-bootlint');
   grunt.loadNpmTasks('grunt-link-checker');
-  grunt.loadNpmTasks("grunt-rsync")
+  grunt.loadNpmTasks('grunt-rsync');
+  grunt.loadNpmTasks('grunt-if');
 
   // Register the grunt tasks
-  grunt.registerTask('build', ['copy:bootstrapCustom','exec:jekyllBuild','concat','sass']);
-  grunt.registerTask('rebuild', ['exec:jekyllClear','build']);
+  grunt.registerTask('build', [
+    'copy:bootstrapCustom',
+    'exec:jekyllBuild',
+    'concat',
+    'sass', 
+    'if:syncOnBuild'
+  ]);
+  grunt.registerTask('rebuild', [
+    'exec:jekyllClear',
+    'build'
+  ]);
 
-  grunt.registerTask('test', ['exec:findRelics', 'exec:checkBaseurl', 'bootlint', 'linkChecker:dev']);
-  grunt.registerTask('polish', ['exec:findNotes']);
 
-  grunt.registerTask('stage', ['newer:htmlmin','newer:copy:fonts','newer:copy:files','newer:copy:serverconfig','newer:copy:sitemap','newer:imagemin',
-             'purifycss','cssmin','newer:uglify']);
+  grunt.registerTask('test', [
+    'exec:findRelics',
+    'exec:checkBaseurl',
+    'htmllint',
+    'bootlint',
+    'linkChecker:dev'
+  ]);
+  grunt.registerTask('polish', [
+    'exec:findNotes'
+  ]);
+
+
+  grunt.registerTask('stage', [
+    'newer:htmlmin',
+    'newer:copy:fonts',
+    'newer:copy:files',
+    'newer:copy:serverconfig',
+    'newer:imagemin',
+    'purifycss',
+    'cssmin',
+    'newer:uglify'
+  ]);
 
   // Register rebuild as the default task fallback
   grunt.registerTask('default', 'rebuild');
