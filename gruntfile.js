@@ -186,7 +186,12 @@ module.exports = function (grunt) {
     // Validation, etc.
     //////////
 
-     // bootlint
+    // html validation
+   htmllint: {
+      all: ["<%= globalConfig.devBuild %>/**/*.html"]
+    },
+
+    // bootlint
     bootlint: {
       options: {
         stoponerror: false,
@@ -268,6 +273,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-bootlint');
   grunt.loadNpmTasks('grunt-link-checker');
   grunt.loadNpmTasks("grunt-rsync")
