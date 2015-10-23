@@ -17,6 +17,6 @@ OR
 
 2) Simply download and complete the form below.  You can email an image of the signed and completed form to osc@hulmail.harvard.edu or fax it to us at (617) 496-2077.
 
-<p><a href="{{site.baseurl}}/assets/files/Assistance Authorization Form (2-15-11).pdf"><img src="{{site.baseurl}}/assets/img/pdf.png" alt="pdf icon" width="25" height="25" style="display: block; margin-left: auto; margin-right: auto; float: left;">&nbsp;OSC Assistance Authorization Form</a> (updated 2/2011)</p>
+<p><a href="{{site.baseurl}}/assets/files/Assistance%20Authorization%20Form%20(2-15-11).pdf"><img src="{{site.baseurl}}/assets/img/pdf.png" alt="pdf icon" width="25" height="25" style="display: block; margin-left: auto; margin-right: auto; float: left;">&nbsp;OSC Assistance Authorization Form</a> (updated 2/2011)</p>
 
 </div>
