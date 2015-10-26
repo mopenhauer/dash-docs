@@ -8,4 +8,4 @@ How does a teenager in New York City whose parents came from Haiti understand he
 
 In her article [Ethnic and Racial Identities of Second-Generation Black Immigrants in New York City](http://nrs.harvard.edu/urn-3:HUL.InstRepos:3686134), Mary Waters, M. E. Zukerman Professor of Sociology, examines how race and class interact to define the identities of second generation West Indian and Haitian Americans in New York City.
 
-You can find a complete list of Prof. Waters’s works in DASH [here](http://dash.harvard.edu/browse?authority=75a7dad7e0bde54e9c56c324919d2733&type=harvardAuthor).
+You can find a complete list of Prof. Waters's works in DASH [here](http://dash.harvard.edu/browse?authority=75a7dad7e0bde54e9c56c324919d2733&type=harvardAuthor).

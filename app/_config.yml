@@ -9,6 +9,9 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
 
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
+
 # Site settings
 title: Digital Access to Scholarship at Harvard
 email: osc@harvard.edu

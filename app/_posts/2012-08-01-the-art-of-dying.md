@@ -8,8 +8,8 @@ In her article [The Civil War Soldier and the Art of Dying](http://nrs.harvard.e
 
 Faust points out that the impact of death in the Civil War extended beyond the quantity of casualties, the unprecedented scale of the slaughter. 
 
-“Death’s significance for the Civil War generation,” Faust argues, “derived as well from the way it violated prevailing assumptions about life’s proper end—about who should die, when and where, and under what circumstances.”
+"Death's significance for the Civil War generation," Faust argues, "derived as well from the way it violated prevailing assumptions about life's proper end---about who should die, when and where, and under what circumstances."
 
-On September 18, the American Experience series on PBS will air [_Death and the Civil War_](http://links.mkt3495.com/ctt?kn=1&ms=NDMyODI3MAS2&r=MjE4MzYzMjk3NDMS1&b=0&j=MTMwNDUxNjE1S0&mt=1&rt=0), a new documentary by acclaimed filmmaker Ric Burns based on President Faust’s prize-winning book _This Republic of Suffering_.
+On September 18, the American Experience series on PBS will air [_Death and the Civil War_](http://links.mkt3495.com/ctt?kn=1&ms=NDMyODI3MAS2&r=MjE4MzYzMjk3NDMS1&b=0&j=MTMwNDUxNjE1S0&mt=1&rt=0), a new documentary by acclaimed filmmaker Ric Burns based on President Faust's prize-winning book _This Republic of Suffering_.
 
-You can find a full list of President Faust’s articles in DASH [here](http://dash.harvard.edu/browse?authority=e347403b30471ab17976e26acd84095c&type=harvardAuthor).
+You can find a full list of President Faust's articles in DASH [here](http://dash.harvard.edu/browse?authority=e347403b30471ab17976e26acd84095c&type=harvardAuthor).
