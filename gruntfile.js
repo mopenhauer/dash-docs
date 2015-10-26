@@ -109,7 +109,7 @@ module.exports = function (grunt) {
       serverconfig: {
         expand: true,
         cwd: '<%= globalConfig.devBuild %>',
-        src: ['.htaccess', 'robots.txt', 'sitemap.xml'],
+        src: ['.htaccess', 'robots.txt', 'sitemap.xml', 'WEB-INF'],
         dest: '<%= globalConfig.prodBuild %>/'
       }
     },
