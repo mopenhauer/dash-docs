@@ -235,7 +235,7 @@ module.exports = function (grunt) {
     // rsync
     rsync: {
       options: {
-        args: ['-ncavz'],
+        args: ['-cavz'],
         exclude: ['.DS_Store']
       },
       local: {
@@ -245,26 +245,26 @@ module.exports = function (grunt) {
           delete: false
         }
       },
-      eaton: {
-        options: {
-          src: '<%= globalConfig.prodBuild %>/',
-          dest: '',
-          host: 'oscusr@eaton.hul.harvard.edu',
-          delete: false
-        }
-      },
-      byron: {
-        options: {
-          src: '<%= globalConfig.prodBuild %>/',
-          dest: '',
-          host: 'oscusr@byron.hul.harvard.edu',
-          delete: false
-        }
-      },
+      // eaton: {
+      //   options: {
+      //     src: '<%= globalConfig.prodBuild %>/',
+      //     dest: '',
+      //     host: 'oscusr@eaton.hul.harvard.edu',
+      //     delete: false
+      //   }
+      // },
+      // byron: {
+      //   options: {
+      //     src: '<%= globalConfig.prodBuild %>/',
+      //     dest: '',
+      //     host: 'oscusr@byron.hul.harvard.edu',
+      //     delete: false
+      //   }
+      // },
       turner: {
         options: {
           src: '<%= globalConfig.prodBuild %>/',
-          dest: '',
+          dest: '/home/dash/prod/dspace/webapps/docs/',
           host: 'dspace@turner.lib.harvard.edu',
           delete: false
         }
