@@ -4,7 +4,7 @@ permalink: /2011/12/advising-advisors/
 ---
 <img src="{{site.baseurl}}/assets/img/US_Supreme_Court_Building.jpg" alt="U.S. Supreme Court Building. Photo by Duncan Lock." title="U.S. Supreme Court Building. Photo by Duncan Lock." width="275" height="206" class="floatright">
 
-"Any law professor who does not get asked to sign ‘scholars' briefs'," Richard Fallon observes, "is not much of a scholar." A professor in constitutional law at Harvard Law School, Fallon considers the ethical implications for legal scholars of participating in scholarly briefs in his article, "[Scholars' Briefs and the Vocation of a Law Professor](http://nrs.harvard.edu/urn-3:HUL.InstRepos:5371988)."
+"Any law professor who does not get asked to sign 'scholars' briefs'," Richard Fallon observes, "is not much of a scholar." A professor in constitutional law at Harvard Law School, Fallon considers the ethical implications for legal scholars of participating in scholarly briefs in his article, "[Scholars' Briefs and the Vocation of a Law Professor](http://nrs.harvard.edu/urn-3:HUL.InstRepos:5371988)."
 
 In briefs of this kind, scholars draw on both their legal knowledge and their perceived objectivity to provide support to one side of an argument before a court. Scholars may write the briefs themselves, but often they are sought out by one party or the other to endorse an already-written brief.
 
