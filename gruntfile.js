@@ -332,7 +332,8 @@ module.exports = function (grunt) {
     'linkChecker:dev'
   ]);
   grunt.registerTask('polish', [
-    'exec:findNotes'
+    'exec:findNotes',
+    'exec:findCurlyQuotes',
   ]);
 
 
