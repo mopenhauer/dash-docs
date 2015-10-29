@@ -5,7 +5,7 @@ title: DASHathon
 
 On March 18, 2013, staff from the Office for Scholarly Communication gathered for a DASHathon: an all-day, office-wide event designed to both rethink our deposit workflow and to increase deposits into DASH.
 
-The day started with an overview of the workflow for making DASH deposits. Particular focus was placed on working with bulk ingests of Harvard-authored articles from the PubMed Central Open Access Subset, as these are the most straightforward in terms of making license decisions and correcting metadata. Half of the OSC’s staff had deposited articles in DASH in the past, while the other half was new to the process. Staff who were less familiar with the process were developers that work directly with the back-end of DASH, Harvard's DSpace-based repository. This combination of experience made the day's work that much more valuable, as staff that worked on DASH deposits regularly were able to suggest updates or changes that developers were immediately able to see, experience, and address. Meanwhile, developers were often able to suggest workflow changes that were low-tech or no-tech, and which would help to speed processing time per article.
+The day started with an overview of the workflow for making DASH deposits. Particular focus was placed on working with bulk ingests of Harvard-authored articles from the PubMed Central Open Access Subset, as these are the most straightforward in terms of making license decisions and correcting metadata. Half of the OSC's staff had deposited articles in DASH in the past, while the other half was new to the process. Staff who were less familiar with the process were developers that work directly with the back-end of DASH, Harvard's DSpace-based repository. This combination of experience made the day's work that much more valuable, as staff that worked on DASH deposits regularly were able to suggest updates or changes that developers were immediately able to see, experience, and address. Meanwhile, developers were often able to suggest workflow changes that were low-tech or no-tech, and which would help to speed processing time per article.
 
 A bulk ingest from PubMed Central had already been established to bring open access articles authored by Harvard affiliates into DASH. Whereas articles submitted directly by Harvard faculty require a more intensive process of metadata entry and editing, bulk ingest articles rely on metadata provided by PubMed Central, leaving OSC staff to edit that metadata. Based on existing parameters we had set for the bulk ingest and established workflow procedures, article processing time for articles ingested from PubMed Central was between 10 and 15 minutes. The majority of that time was spent on two processes: using a search box to check author names against the Harvard directory, and changing mathematical and scientific symbols to MathJax to ensure proper display across systems and displays.
 
@@ -41,7 +41,7 @@ We decided to ignore title case in both the citation and title fields. The bulk 
 
 An improvement to the author lookup feature was already in development, but the amount of time the change would save was made clear to all staff members after using the existing author lookup feature during the DASHathon. The new feature has changed the icons representing a Harvard author vs. non-Harvard author to make author affiliations more clear to depositors; incorporates a drop-down arrow to open a search window, facilitating searching and decreasing the number of clicks needed to perform a search; and the number of clicks needed to select an author from a list of two or fewer names was also reduced.
 
-For Harvard-affiliated authors with long titles, a hover feature was added to display the author’s full title when a staff member mouses over the author’s name during author lookup. The author lookup box was also expanded to accommodate longer titles.
+For Harvard-affiliated authors with long titles, a hover feature was added to display the author's full title when a staff member mouses over the author's name during author lookup. The author lookup box was also expanded to accommodate longer titles.
 
 #### OA Policy Date
 
@@ -53,7 +53,7 @@ The title field was moved to the top of the item submission page. An earlier fea
 
 #### Edit Button
 
-The “Edit Metadata” button was moved to the top of a series of buttons on the item submission landing page. This is the most frequently used button on the landing page, and moving it to the top of the series allows staff to access the button without having to scroll down the page.
+The "Edit Metadata" button was moved to the top of a series of buttons on the item submission landing page. This is the most frequently used button on the landing page, and moving it to the top of the series allows staff to access the button without having to scroll down the page.
 
 #### Citation
 
@@ -79,15 +79,15 @@ The article id, or article number, is automatically added to citations for artic
 
 #### Keywords
 
-A second keyword parameter was added to the bulk ingest to ensure that keywords are automatically added to the article’s metadata during ingest.
+A second keyword parameter was added to the bulk ingest to ensure that keywords are automatically added to the article's metadata during ingest.
 
 #### Version Type
 
-Bulk ingest articles from PubMed Central will have the default version type set as “Version of Record.” All articles from the PubMed Central Open Access Subset ingest are published versions, so making this the default during ingest saves a step during the article deposit process.
+Bulk ingest articles from PubMed Central will have the default version type set as "Version of Record." All articles from the PubMed Central Open Access Subset ingest are published versions, so making this the default during ingest saves a step during the article deposit process.
 
 #### Abstract
 
-The bulk ingest parameters were set to recognize the headings within an abstract (“Background,” “Methods,” “Conclusion”) and to add a colon after each when displaying headings in the abstract field in DASH. In some cases a period was also being added; this was amended. Additional headings were also added to the bulk ingest parameters as there are many variations that were often integrated into the body of the abstract instead of being distinguished as headers.
+The bulk ingest parameters were set to recognize the headings within an abstract ("Background," "Methods," "Conclusion") and to add a colon after each when displaying headings in the abstract field in DASH. In some cases a period was also being added; this was amended. Additional headings were also added to the bulk ingest parameters as there are many variations that were often integrated into the body of the abstract instead of being distinguished as headers.
 
 ## Logistics
 
