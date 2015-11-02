@@ -2,7 +2,7 @@
 title: Manual Deposit
 ---
 
-You can submit articles directly into DASH using the DASH deposit interface, or you can have the Office for Scholarly Communication faciliate the process by emailing a copy of the manuscript or uploading a copy via the [Quick Submit]({{site.baseurl}}/quicksubmit) interface.
+You can submit articles directly into DASH using the DASH deposit interface, or you can have the Office for Scholarly Communication faciliate the process by emailing a copy of the manuscript or uploading a copy via the [Quick Submit](https://osc.hul.harvard.edu/dash/quicksubmit) interface.
 
 If you want to deposit items directly using the DASH interface, you will need to register for an account and receive permission to submit to a particular collection.
 
@@ -14,7 +14,7 @@ Once you have provided your login information, you will be redirected to a page 
 
 ### What if I'd like my assistant or student or other person to submit articles to DASH on my behalf?
 
-Simply fill out an [Assistance Authorization]({{site.baseurl}}/proxy) form and send it to the Office for Scholarly Communication. Your assistant can then submit on your behalf using his or her own DASH login. 
+Simply fill out an [Assistance Authorization](https://osc.hul.harvard.edu/dash/proxy) form and send it to the Office for Scholarly Communication. Your assistant can then submit on your behalf using his or her own DASH login. 
 
 ### I have a DASH account; how do I submit an article?
 

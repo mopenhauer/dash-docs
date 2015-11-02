@@ -39,7 +39,7 @@ Even if you do not have rights to distribute the article in DASH, you can (and s
 
 ## How do I obtain a waiver for an article under the Open Access Policy?
 
-See here for information on obtaining a waiver.
+See [here](https://osc.hul.harvard.edu/authors/waiver) for information on obtaining a waiver.
 
 ## May I still deposit my article in the Repository if I have obtained a waiver for it under the Open Access Policy?
 
@@ -49,7 +49,7 @@ Even if you do not have rights to distribute the article in DASH, you can (and s
 
 ## What articles are covered by the Open Access Policy?
 
-Visit the [Open-Access Policies](http://root-with-dash.dev/policies) section of the Office for Scholarly Communications site for more information.
+Visit the [Open-Access Policies](https://osc.hul.harvard.edu/policies) section of the Office for Scholarly Communications site for more information.
 
 ## May I deposit material that is not covered by the Open-Access Policy?
 
