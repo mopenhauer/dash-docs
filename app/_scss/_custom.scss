@@ -140,10 +140,17 @@ aside {
   box-sizing: border-box;
   padding: 0px 10px;
 
-  li {
+  ul li {
     list-style-type: none;
     margin-left: -30px;
     font-size: .69em;
+  }
+
+  ol li {
+    margin-left: -20px;
+    font-size: .69em;
+    padding-bottom: 10px;
+    line-height: initial;
   }
 
   h2 {
