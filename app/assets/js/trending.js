@@ -5,9 +5,9 @@ $.ajax({
     jsonp: "callback",
     jsonpCallback: 'callback',
     success: function( response ) {
-        var list = $("ol.trending-works")
+        var list = $("ol.trending-works");
         $.each(response, function(index, value){
-          list.append('<li><a href="' + value.link + '">' + value.title + '</a></li>')
+          list.append('<li><a href="' + value.link + '">' + value.title + '</a></li>');
         });
     }
 });
