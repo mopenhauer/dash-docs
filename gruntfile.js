@@ -146,6 +146,7 @@ module.exports = function (grunt) {
           'vendor/jquery/dist/jquery.js',
           'vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
           'vendor/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+          'app/assets/js/snapshots.js',
           'app/assets/js/slide.js',
           'app/assets/js/trending.js'
 
