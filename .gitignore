@@ -2,7 +2,5 @@
 *~
 app/.jekyll-metadata
 builds/
-jekyll/
 node_modules/
 vendor/
-Gemfile.lock
