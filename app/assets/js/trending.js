@@ -6,7 +6,7 @@ $.ajax({
     jsonpCallback: 'callback',
     success: function( response ) {
       var list = $("ol.trending-works");
-      var handle_pattern = new RegExp("1\/[0-9]*");
+      var handle_pattern = new RegExp("^1\/[0-9]*$");
       $.each(response, function(index, item){
         if (handle_pattern.test(item.handle)){
           var url = "https://dash.harvard.edu/handle/" + item.handle;
