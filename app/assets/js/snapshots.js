@@ -1,6 +1,6 @@
 // Using JSONP
 $.ajax({
-  url: "https://osc.hul.harvard.edu/dash/services/dash/snapshots.php", 
+  url: "https://osc.hul.harvard.edu/services/dash/snapshots.php", 
   dataType: "jsonp",
   jsonp: "callback",
   jsonpCallback: 'snapshots',
