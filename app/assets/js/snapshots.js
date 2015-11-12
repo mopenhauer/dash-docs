@@ -38,5 +38,11 @@ $.ajax({
         $(this).append('<a href="https://osc.hul.harvard.edu/dash/mydash"><img src="/docs/assets/img/downloads_map.png" alt="" height="92" width="138"><span>Visit MyDASH Stats</span></a>');          
       }
     });
+  },
+  error: function(){
+    var panels = $("aside div.tab-pane");
+    $.each(panels, function(index){
+      $(this).append('<a href="https://osc.hul.harvard.edu/dash/mydash"><img src="/docs/assets/img/downloads_map.png" alt="" height="92" width="138"><span>Visit MyDASH Stats</span></a>');          
+    });
   }
 });

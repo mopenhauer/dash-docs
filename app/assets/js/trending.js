@@ -15,5 +15,8 @@ $.ajax({
           li.append(a).appendTo(list);
         }
       });
+    },
+    error: function(){
+      $("ol.trending-works").hide().parent().append('<p style="font-size: .69em;">(Currently Unavailable)</p>');
     }
 });
