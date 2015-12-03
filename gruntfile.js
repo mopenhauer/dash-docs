@@ -264,19 +264,11 @@ module.exports = function (grunt) {
       //     host: 'oscusr@eaton.hul.harvard.edu',
       //     delete: false
       //   }
-      // },
-      // byron: {
-      //   options: {
-      //     src: '<%= globalConfig.prodBuild %>/',
-      //     dest: '',
-      //     host: 'oscusr@byron.hul.harvard.edu',
-      //     delete: false
-      //   }
-      // },
+      // }
       turner: {
         options: {
           src: '<%= globalConfig.prodBuild %>/',
-          dest: '/home/dash/prod/dspace/webapps/docs/',
+          dest: '/home/dash/prod/tomcat/webapps/docs/',
           host: 'dspace@turner.lib.harvard.edu',
           delete: false
         }
