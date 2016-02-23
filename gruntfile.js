@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (grunt) {
-  
+
   // CONFIGURATION
   var globalConfig = {
     devBuild: "builds/dev/docs",
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     //////////
     // BASH
     /////////
-    
+
     exec: {
       // jekyll
       jekyllBuild: {
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
     //////////
     // HTML
     /////////
@@ -100,7 +100,7 @@ module.exports = function (grunt) {
     //////////
     copy: {
       bootstrapCustom: {
-        src: 'app/_scss/_bootstrap-custom.scss', 
+        src: 'app/_scss/_bootstrap-custom.scss',
         dest: 'vendor/bootstrap-sass/assets/stylesheets/_bootstrap-custom.scss'
       },
       fonts: {
@@ -287,7 +287,7 @@ module.exports = function (grunt) {
 
   });
 
-    
+
 
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-exec');
@@ -310,7 +310,7 @@ module.exports = function (grunt) {
     'copy:bootstrapCustom',
     'exec:jekyllBuild',
     'concat',
-    'sass', 
+    'sass',
     'if:syncOnBuild'
   ]);
   grunt.registerTask('rebuild', [
