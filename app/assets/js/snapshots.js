@@ -23,7 +23,7 @@ $.ajax({
         }
         // predefined image location only
         if (image_pattern.test(response[index].image_file)){
-          var image_url = "https://osc.hul.harvard.edu/sites/all/modules/mydash/images/snapshots/" + response[index].image_file;
+          var image_url = "https://osc.hul.harvard.edu/assets/snapshots/" + response[index].image_file;
         } else {
           var image_url = "/docs/assets/img/downloads_map.png";
         }
