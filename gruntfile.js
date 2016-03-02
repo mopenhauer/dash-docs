@@ -72,6 +72,16 @@ module.exports = function (grunt) {
             grunt.warn("Found relative links without {{site.baseurl}}. (If intentional, add lines to tests/check_baseurl/exclude_lines.txt)\n\n" + stderr)
           }
         }
+      },
+      countImageminOutput: {
+        command: '[[ `ls <%= globalConfig.devBuild %>/assets/img/ | wc -l` = `ls <%= globalConfig.prodBuild %>/assets/img/ | wc -l` ]] && echo "Imagemin file count OK" || >&2 echo "file count not OK!"',
+        stderr: false,
+        callback: function (error, stdout, stderr) {
+          if (stderr) {
+            grunt.warn("Imagemin problem: " + stderr)
+          }
+        }
+
       }
     },
 
@@ -127,7 +137,7 @@ module.exports = function (grunt) {
       dynamic: {
         expand: true,
         cwd: '<%= globalConfig.devBuild %>/assets/img',
-        src: ['**/*.{png,jpg,gif,jpeg}'],
+        src: ['**/*.{png,jpg,JPG,gif,jpeg,ico}'],
         dest: '<%= globalConfig.prodBuild %>/assets/img/',
       }
     },
@@ -338,6 +348,7 @@ module.exports = function (grunt) {
     'newer:copy:files',
     'newer:copy:serverconfig',
     'newer:imagemin',
+    'exec:countImageminOutput',
     'purifycss',
     'cssmin',
     'newer:uglify'
