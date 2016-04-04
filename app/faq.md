@@ -69,6 +69,7 @@ For articles that do not fall under the Open Access Policy, the Repository suppo
 Some publishers also limit the version of your material that may be posted in an institutional repository. As explained below, you can choose the version of your material that you will submit to the Repository.
 
 ## Which version of my article or other material should I deposit?
+{: #version}
 
 You may deposit any version of your material that you have the right to include in the Repository. You may have the right to include some but not all versions. It is worth distinguishing various versions of an article:
 
