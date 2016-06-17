@@ -1,5 +1,6 @@
 ---
 layout: front
+sidebar: front
 ---
 <h1 class="sr-only" id="top" tabindex="-1">DASH: Digital Access to Scholarship at Harvard</h1>
 
@@ -29,16 +30,22 @@ layout: front
   </div>
 </div>
 
+<div>
+
 <h2 class="h1">What is DASH?</h2>
 <p>A central, open-access repository of research by members of the Harvard community.</p>
 <p><a href="https://osc.hul.harvard.edu/dash/quicksubmit/"><img src="{{site.baseurl}}/assets/img/ButtonDeposit.png" alt="Deposit Your Work" title="Deposit Your Work" height="53" width="205"></a></p>
 
-<h2 class="h1">Featured Works</h2>
-{% for post in site.posts limit:5 %}
-<article class="first-post">
-    <h3 class="h2">
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h3>
-    {{post.content}}
-</article>
-{% endfor %}
+<div id="author-info">
+    <p>DASH enlarges the <a href="https://osc.hul.harvard.edu/dash/mydash/geomap/1/last30/alldash/">audience</a> and <a href="http://www.openoasis.org/index.php?option=com_content&amp;view=article&amp;id=560&amp;Itemid=391">impact</a> of your work. Authors who deposit in DASH have access to <a href="https://osc.hul.harvard.edu/dash/mydash/">on-demand metrics</a> and receive monthly reports about their readership. Deposited works receive persistent URLs, are comprehensively indexed by search engines, including Google and Google Scholar, reach academic and non-academic <a href="https://dash.harvard.edu/stories">readers</a> who may not have access to the original publications, and are preserved by the Harvard Library.</p>
+
+    <p>Making your work open access in DASH is as simple as completing our <a href="https://osc.hul.harvard.edu/dash/quicksubmit/">quick submit form</a>. We also welcome bulk deposits and offer CV scraping services. Simply <a href="mailto:{{site.email}}">contact OSC</a> if you are interested. OSC will do the legal legwork for all submissions.</p>
+
+    <p>The <a href="https://osc.hul.harvard.edu/">OSC</a> is pleased to offer a robust suite of services to support you and your scholarship. Visit our <a href="https://osc.hul.harvard.edu/authors/">For Authors</a> page to learn more.</p>
+</div>
+
+<h2 class="h1">Trending Works</h2>
+<ol class="trending-works">
+</ol>
+
+</div>
