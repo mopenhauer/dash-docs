@@ -267,14 +267,15 @@ module.exports = function (grunt) {
           delete: false
         }
       },
-      // eaton: {
-      //   options: {
-      //     src: '<%= globalConfig.prodBuild %>/',
-      //     dest: '',
-      //     host: 'oscusr@eaton.hul.harvard.edu',
-      //     delete: false
-      //   }
-      // }
+      eaton: {
+        options: {
+          src: '<%= globalConfig.prodBuild %>',
+          exclude: [".DS_Store","WEB-INF"],
+          dest: '/home/osc/osc-dev/htdocs/',
+          host: 'oscusr@eaton.hul.harvard.edu',
+          delete: false
+        }
+      },
       turner: {
         options: {
           src: '<%= globalConfig.prodBuild %>/',
