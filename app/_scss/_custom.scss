@@ -42,11 +42,6 @@ div.container {
 
 a {
   color: #417577;
-  text-decoration: none;
-
-  &:hover, &:focus{
-    text-decoration: underline;
-  }
 }
 
 h1, .h1 {
@@ -298,6 +293,7 @@ main {
   }
   .nav-tabs > li > a {
     border-radius: 10px;
+    text-decoration: none;
   }
   .nav-tabs > li > a:hover, .nav > li > a:focus {
     color: black;
