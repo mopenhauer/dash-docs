@@ -85,6 +85,7 @@ h4 {
 }
 
 header {
+  margin-top: 10px;
   img {
     display: block;
     border-bottom: 1px solid #982521;
@@ -115,8 +116,26 @@ li.dropdown li {
   border: none;
 }
 
+.dropdown-menu > li > a {
+    padding: 7px 20px;
+}
+
 .nav-pills > li + li {
     margin-left: 0px;
+}
+
+.main-nav > li {
+    width: 190px;
+}
+
+.main-nav a {
+    text-decoration: none;
+}
+
+.main-nav > li > a {
+    width: 100%;
+    padding: 7px 0px;
+    text-align: center;
 }
 
 main {
@@ -218,7 +237,7 @@ aside {
   }
 
   .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    border-bottom-color: #ddd; 
+    border-bottom-color: #ddd;
   }
 
   .nav > li {
@@ -228,6 +247,7 @@ aside {
   .nav > li > a {
       padding: 2px 7px;
       border-radius: 10px;
+      text-decoration: none;
   }
 
   .tab-pane span {
